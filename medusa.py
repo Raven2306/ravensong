@@ -69,14 +69,14 @@ async def start_cmd(_, msg: Message):
         )
     else:
         await msg.reply(
-            text='Hey! I am Online. PM me if you have any question on how to use me.',
+            text='Hey! Mən aktivəm şəxsidə musiqi dinləmək üçün mənə start ver.🙆🏻',
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text='Start me in PM :)',
+                            text='Şəxsidə start ver :)',
                             # Replace the `MedusaMousikibot` with your bot username
-                            url=f't.me/MedusaMousikibot?start=help'
+                            url=f't.me/LegendSongRobot?start=help'
                         )
                     ]
                 ]
