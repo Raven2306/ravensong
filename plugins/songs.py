@@ -14,7 +14,7 @@ text = (
 
 descargar = Descargar('downloads/')
 
-@Medusa.on_message(
+@Legend.on_message(
     filters.command(['song'],prefixes=['/', '!'])
     & (filters.group | filters.private)
     & ~ filters.edited)
@@ -23,14 +23,13 @@ async def song_dl(_, msg: Message):
     if len(msg.command) == 1:
         return await msg.reply(text=text, parse_mode='md')
 
-    r_text = await msg.reply('Processing...')
+    r_text = await msg.reply('Yerinə Yetirilir...')
     url = msg.text.split(None, 1)[1]
     url = extract_the_url(url=url)
     
     if url == 0:return await r_text.edit('I could not find that song. Try with another keywords...')
 
-    await r_text.edit('Downloading...')
-
+    await r_text.edit('Yüklənir...')
     ytinfo = descargar.get_song(url)
 
     if ytinfo == 0:
@@ -38,7 +37,7 @@ async def song_dl(_, msg: Message):
         return
 
     try:
-        await r_text.edit_text('Uploading...')
+        await r_text.edit_text('Göndərilir...')
     except MessageNotModified:
         pass
 
@@ -48,7 +47,7 @@ async def song_dl(_, msg: Message):
             duration=int(ytinfo.length),
             performer=str(ytinfo.author),
             title=f'{str(ytinfo.title)}',
-            caption=f"<a href='{url}'>__{ytinfo.title}__</a>\n\n__Downloaded by @LegendSongRobot__"
+            caption=f"<a href='{url}'>__{ytinfo.title}__</a>\n\n__Musiqini Yüklədi ⚡️ @LegendSongRobot__"
         )
 
     await r_text.delete()
