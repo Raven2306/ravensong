@@ -26,12 +26,12 @@ PMKEYBOARD = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                'Help ❓', callback_data='help_callback'),
+                'Kömək ❓', callback_data='help_callback'),
             InlineKeyboardButton('About ❕', callback_data='about')
         ],
         [
             InlineKeyboardButton(
-                'Add me to a group 🎊', url='http://t.me/MedusaMousikibot?startgroup=true')  # Replace the `MedusaMousikibot` with your bot username
+                'Məni qrupa əlavə et 🎊', url='http://t.me/LegendSongRobot?startgroup=true')  # Replace the `MedusaMousikibot` with your bot username
         ]
     ]
 )
