@@ -52,7 +52,7 @@ ABOUTTEXT = (
 )
 
 
-@Medusa.on_message(
+@Legend.on_message(
     filters.command(['start', 'help'], ['/', '!'])
     & (filters.private | filters.group)
     & ~ filters.edited
