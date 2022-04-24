@@ -12,7 +12,7 @@ api = genius.Genius(GENIUS_API,verbose=False)
 @Legend.on_message(filters.command(['lyrics','lyric'],prefixes=['/','!']) 
     & (filters.group | filters.private) 
     & ~ filters.edited)
-async def lyrics(medusa:Medusa,msg: Message):
+async def lyrics(legend:Legend,msg: Message):
 
     if len(msg.command) == 1:
         return await msg.reply(
