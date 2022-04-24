@@ -69,12 +69,12 @@ async def start_cmd(_, msg: Message):
         )
     else:
         await msg.reply(
-            text='Hey! Mən aktivəm şəxsidə musiqi dinləmək üçün mənə start ver.🙆🏻',
+            text='Hey! Mən aktivəm şəxsidə musiqi dinləmək üçün mənə start ver.⚡️',
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text='Şəxsidə start ver :)',
+                            text='Şəxsidə start ver.⚡️ :)',
                             # Replace the `MedusaMousikibot` with your bot username
                             url=f't.me/LegendSongRobot?start=help'
                         )
@@ -84,7 +84,7 @@ async def start_cmd(_, msg: Message):
         )
 
 
-@Medusa.on_callback_query()
+@Legend.on_callback_query()
 async def callback_handling(_, query: CallbackQuery):
     ''' Response for Callback queries '''
 
@@ -92,7 +92,7 @@ async def callback_handling(_, query: CallbackQuery):
     q_id = query.id
 
     if q_data == 'menu_1':
-        await Medusa.answer_callback_query(q_id, 'Main Menu!')
+        await Legend.answer_callback_query(q_id, 'Main Menu!')
         await query.message.edit(
             text=PMTEXT,
             reply_markup=PMKEYBOARD,
@@ -100,7 +100,7 @@ async def callback_handling(_, query: CallbackQuery):
         )
 
     elif q_data == 'help_callback':
-        await Medusa.answer_callback_query(q_id, 'Help Menu!')
+        await Legend.answer_callback_query(q_id, 'Help Menu!')
         await query.message.edit(text=HELPTEXT,
                                  parse_mode='md',
                                  reply_markup=InlineKeyboardMarkup(
@@ -116,7 +116,7 @@ async def callback_handling(_, query: CallbackQuery):
                                  )
 
     elif q_data == 'about':
-        await Medusa.answer_callback_query(q_id, text='About Menu!')
+        await Legend.answer_callback_query(q_id, text='About Menu!')
         await query.message.edit(
             text=ABOUTTEXT,
             disable_web_page_preview=True,
@@ -133,8 +133,8 @@ async def callback_handling(_, query: CallbackQuery):
 
 
 
-Medusa.start()
-print('Medusa is starting....')
+Legend.start()
+print('Legend is starting....')
 idle()
-print('Medusa is aborting...')
-Medusa.stop()
+print('Legend is aborting...')
+Legend.stop()
