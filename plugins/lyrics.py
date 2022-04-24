@@ -19,7 +19,7 @@ async def lyrics(medusa:Medusa,msg: Message):
             text='__Please specify the query...__', 
         )
 
-    r_text = await msg.reply('__Searching...__')
+    r_text = await msg.reply('__⚡️Axtarılır...__')
     song_name = msg.text.split(None, 1)[1]
 
     lyric = api.search_song(song_name)
