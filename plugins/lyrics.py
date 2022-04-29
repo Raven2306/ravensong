@@ -44,7 +44,7 @@ async def lyrics(legend:Legend,msg: Message):
         await msg.reply_document(
             document=f'downloads/{lyric_title}.txt',
             thumb='src/',
-            caption=f'\n__--{lyric_title}--__\n__{lyric_artist}__\n\n__Extracted by @LegendSongRobot__'
+            caption=f'\n__--{lyric_title}--__\n__{lyric_artist}__\n\n__Sözləri gətirdi : @LegendSongRobot__'
         )
 
         await r_text.delete()
