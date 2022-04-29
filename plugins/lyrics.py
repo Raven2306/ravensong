@@ -44,7 +44,7 @@ async def lyrics(legend:Legend,msg: Message):
         await msg.reply_document(
             document=f'downloads/{lyric_title}.txt',
             thumb='src/Medusa320px.png',
-            caption=f'\n__--{lyric_title}--__\n__{lyric_artist}__\n\n__Extracted by @MedusaMousikibot__'
+            caption=f'\n__--{lyric_title}--__\n__{lyric_artist}__\n\n__Extracted by @LegendSongRobot__'
         )
 
         await r_text.delete()
