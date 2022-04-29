@@ -24,7 +24,7 @@ async def lyrics(legend:Legend,msg: Message):
 
     lyric = api.search_song(song_name)
 
-    if lyric is None:return await r_text.edit('__No lyrics found for your query...__')
+    if lyric is None:return await r_text.edit('__Axtardığın sözləri tapa bilmədim :( bəlkə mənə biraz da məlumat verəsən?__')
 
     lyric_title = lyric.title
     lyric_artist = lyric.artist
@@ -43,7 +43,7 @@ async def lyrics(legend:Legend,msg: Message):
         )
         await msg.reply_document(
             document=f'downloads/{lyric_title}.txt',
-            thumb='src/Medusa320px.png',
+            thumb='src/',
             caption=f'\n__--{lyric_title}--__\n__{lyric_artist}__\n\n__Extracted by @LegendSongRobot__'
         )
 
