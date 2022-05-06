@@ -14,7 +14,7 @@ text = (
 
 descargar = Descargar('downloads/')
 
-@Legend.on_message(
+@Raven.on_message(
     filters.command(['song'],prefixes=['/', '!'])
     & (filters.group | filters.private)
     & ~ filters.edited)
