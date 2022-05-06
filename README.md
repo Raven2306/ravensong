@@ -28,7 +28,7 @@
 
 ## Commands 
 
-> Reach [@MedusaMusic](https://t.me/MedusaMousikibot) on Telegram
+> Reach [@RavenSongRobot](https://t.me/RavenSongRobot) on Telegram
 
 - `/start` - Check if the bot online
 - `/song TWICE Alcohol Free` - Just replace the _'TWICE Alcohol Free'_ with a song name what you want
@@ -55,7 +55,7 @@ $ git clone https://github.com/bibee-emio/MedusaMusic
 ```
 - Change the Directory
 ```sh
-$ cd MedusaMusic
+$ cd RavenSong
 ```
 - Install the requirements using pip
 ```sh
@@ -64,7 +64,7 @@ $ pip3 install -r requirements.txt
 - Edit the [`config.py`](config.py) with your own values
 - Run the bot
 ```sh
-$ python3 medusa.py
+$ python3 raven.py
 ```
 
 ## Deploy to Heroku
