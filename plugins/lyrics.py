@@ -9,7 +9,7 @@ from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 api = genius.Genius(GENIUS_API,verbose=False)
 
 
-@Legend.on_message(filters.command(['lyrics','lyric'],prefixes=['/','!']) 
+@Raven.on_message(filters.command(['lyrics','lyric'],prefixes=['/','!']) 
     & (filters.group | filters.private) 
     & ~ filters.edited)
 async def lyrics(legend:Legend,msg: Message):
@@ -44,7 +44,7 @@ async def lyrics(legend:Legend,msg: Message):
         await msg.reply_document(
             document=f'downloads/{lyric_title}.txt',
             thumb='src/',
-            caption=f'\n__--{lyric_title}--__\n__{lyric_artist}__\n\n__Sözləri gətirdi : @LegendSongRobot__'
+            caption=f'\n__--{lyric_title}--__\n__{lyric_artist}__\n\n__Sözləri gətirdi : @RavenSongRobot__'
         )
 
         await r_text.delete()
