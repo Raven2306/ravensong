@@ -31,7 +31,7 @@ PMKEYBOARD = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton(
-                'Məni qrupa əlavə et 🎊', url='http://t.me/LegendSongRobot?startgroup=true')  # Replace the `MedusaMousikibot` with your bot username
+                'Məni qrupa əlavə et 🎊', url='http://t.me/RavenSongRobot?startgroup=true')  # Replace the `MedusaMousikibot` with your bot username
         ]
     ]
 )
@@ -52,7 +52,7 @@ ABOUTTEXT = (
 )
 
 
-@Legend.on_message(
+@raven.on_message(
     filters.command(['start', 'help'], ['/', '!'])
     & (filters.private | filters.group)
     & ~ filters.edited
@@ -76,7 +76,7 @@ async def start_cmd(_, msg: Message):
                         InlineKeyboardButton(
                             text='Şəxsidə start ver.⚡️ :)',
                             # Replace the `MedusaMousikibot` with your bot username
-                            url=f't.me/LegendSongRobot?start=help'
+                            url=f't.me/RavenSongRobot?start=help'
                         )
                     ]
                 ]
@@ -84,7 +84,7 @@ async def start_cmd(_, msg: Message):
         )
 
 
-@Legend.on_callback_query()
+@raven.on_callback_query()
 async def callback_handling(_, query: CallbackQuery):
     ''' Response for Callback queries '''
 
@@ -92,7 +92,7 @@ async def callback_handling(_, query: CallbackQuery):
     q_id = query.id
 
     if q_data == 'menu_1':
-        await Legend.answer_callback_query(q_id, 'Main Menu!')
+        await Raven.answer_callback_query(q_id, 'Main Menu!')
         await query.message.edit(
             text=PMTEXT,
             reply_markup=PMKEYBOARD,
@@ -100,7 +100,7 @@ async def callback_handling(_, query: CallbackQuery):
         )
 
     elif q_data == 'help_callback':
-        await Legend.answer_callback_query(q_id, 'Help Menu!')
+        await Raven.answer_callback_query(q_id, 'Help Menu!')
         await query.message.edit(text=HELPTEXT,
                                  parse_mode='md',
                                  reply_markup=InlineKeyboardMarkup(
@@ -134,7 +134,7 @@ async def callback_handling(_, query: CallbackQuery):
 
 
 Legend.start()
-print('Legend is starting....')
+print('Raven is starting....')
 idle()
-print('Legend is aborting...')
-Legend.stop()
+print('Raven is aborting...')
+Raven.stop()
