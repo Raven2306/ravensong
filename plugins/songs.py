@@ -47,7 +47,7 @@ async def song_dl(_, msg: Message):
             duration=int(ytinfo.length),
             performer=str(ytinfo.author),
             title=f'{str(ytinfo.title)}',
-            caption=f"<a href='{url}'>__{ytinfo.title}__</a>\n\n__Musiqini Yüklədi ⚡️ @LegendSongRobot__"
+            caption=f"<a href='{url}'>__{ytinfo.title}__</a>\n\n__Musiqini Yüklədi ⚡️ @RavenSongRobot__"
         )
 
     await r_text.delete()
